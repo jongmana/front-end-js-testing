@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Testrunner demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha">
+    </div>
+
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+
+    <!-- Voeg hier de scripts toe waarin de te testen code staat -->
+    <script src="scripts/HelloWorld.js"></script>
+    <script src="scripts/wiskunde.js"></script>
+
+    <script class="mocha-init">
+      mocha.setup("bdd");
+      mocha.checkLeaks();
+    </script>
+
+    <!-- Voer hier de scripts toe die de code moeten testen -->
+    <script src="testscripts/HelloWorld.spec.js"></script>
+    <script src="testscripts/wiskunde.spec.js"></script>
+
+    <script class="mocha-exec">
+      mocha.run();
+    </script>
+  </body>
+</html>
